@@ -1,3 +1,14 @@
+.center {
+    text-align: center;
+}
+
+.photo {
+    border-radius: 50%;
+    background-size: contain;
+    width: 200px;
+    height: 200px;
+}
+
 /* ページトップへ */
 .pagetop{
     display: none;
@@ -116,7 +127,7 @@ body{
 }
 
 .circles li:nth-child(1){
-    background-image: url(./takenoko.png);
+    background-image: url(./takenoko02.png);
     /* background-color: #FF914D; */
     background-size: contain;
     left: 25%;
@@ -127,7 +138,7 @@ body{
 
 
 .circles li:nth-child(2){
-    background-image: url(./takenoko.png);
+    background-image: url(./takenoko02.png);
     background-size: contain;
     /* background-color: blue; */
     left: 10%;
@@ -138,7 +149,7 @@ body{
 }
 
 .circles li:nth-child(3){
-    background-image: url(./takenoko.png);
+    background-image: url(./takenoko02.png);
     background-size: contain;
     /* background-color: blueviolet; */
     left: 70%;
@@ -148,7 +159,7 @@ body{
 }
 
 .circles li:nth-child(4){
-    background-image: url(./takenoko.png);
+    background-image: url(./takenoko02.png);
     background-size: contain;
     /* background-color: brown; */
     left: 40%;
@@ -159,7 +170,7 @@ body{
 }
 
 .circles li:nth-child(5){
-    background-image: url(./takenoko.png);
+    background-image: url(./takenoko02.png);
     background-size: contain;
     /* background-color: crimson; */
     left: 65%;
@@ -169,7 +180,7 @@ body{
 }
 
 .circles li:nth-child(6){
-    background-image: url(./takenoko.png);
+    background-image: url(./takenoko02.png);
     background-size: contain;
     /* background-color: cyan; */
     left: 55%;
@@ -179,7 +190,7 @@ body{
 }
 
 .circles li:nth-child(7){
-    background-image: url(./takenoko.png);
+    background-image: url(./takenoko02.png);
     background-size: contain;
     /* background-color: deeppink; */
     left: 35%;
@@ -189,7 +200,7 @@ body{
 }
 
 .circles li:nth-child(8){
-    background-image: url(./takenoko.png);
+    background-image: url(./takenoko02.png);
     background-size: contain;
     /* background-color: green; */
     left: 50%;
@@ -200,7 +211,7 @@ body{
 }
 
 .circles li:nth-child(9){
-    background-image: url(./takenoko.png);
+    background-image: url(./takenoko02.png);
     background-size: contain;
     /* background-color: yellowgreen; */
     left: 20%;
@@ -211,7 +222,7 @@ body{
 }
 
 .circles li:nth-child(10){
-    background-image: url(./takenoko.png);
+    background-image: url(./takenoko02.png);
     background-size: contain;
     /* background-color: tomato; */
     left: 85%;
