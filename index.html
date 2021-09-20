@@ -1,13 +1,24 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" prefix="og: http://ogp.me/ns#">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>My First Blog</title>
-    <!-- MDB icon -->
-    <link rel="icon" href="#" type="image/x-icon" />
+
+    <meta property="og:title" content="BookMarkメモ ブックマーク管理サイト">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="自由にブックマークを整理しよう！タグ・メモ・色分け機能付き">
+    <meta property="og:url" content="https://bmapp-practice.herokuapp.com/">
+    <meta property="og:site_name" content="BookMarkメモ ブックマーク管理サイト">
+    <meta property="og:image" content="https://bookmark-bm.herokuapp.com/static/BookMarkMemoImage.png">
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@onlytakenoko" />
+
+    <title>BookMarkメモ マイページ</title>
+    <link rel="stylesheet" href="static/main.css">
+
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
@@ -15,261 +26,135 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="static/main.css">
 
+
+    <link rel="shortcut icon" href="#">
 
 </head>
 
-<body>
-    <!-- Start your project here-->
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/">My Blog</a>
+<body style="margin: 0;
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+    z-index: 10;">
 
-                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
-                    data-mdb-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <i class="fas fa-bars"></i>
-                </button>
+    <p class="pagetop" style="display: block; z-index: 100;">
+        <a href="#">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+    </p>
 
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-link active" aria-current="page" href="{% url 'myapp:index' %}">Home</a>
-                        <a class="nav-link" href="/admin" target="_blank">管理画面へ</a>
-                    </div>
-                </div>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #38B6FF;">
+        <!-- Container wrapper -->
+        <div class="container">
 
+            <a href="#" 　class="navbar-brand">
+                <img src="./static/takenoko.png" height="54" alt="" loading="lazy" style="margin-top: -1px; margin:15px;" />
+            </a>
 
-                <ul class="navbar-nav">
-                    <!-- Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="account" role="button"
-                            data-mdb-toggle="dropdown" aria-expanded="false">
-                            アカウント
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="account">
+            <!-- Toggle button -->
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                data-mdb-target="#navbarRightAlignExample" aria-controls="navbarRightAlignExample" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
 
-                            {% if request.user.is_authenticated %}
-                            <li>
-                                <a class="dropdown-item">{{ request.user }}</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="{% url 'myapp:logout' %}">ログアウト</a>
-                            </li>
-                            {% else %}
-                            <li>
-                                <a class="dropdown-item" href="{% url 'myapp:login' %}">ログイン</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="{% url 'myapp:signup' %}">ユーザー登録</a>
-                            </li>
-                            {% endif %}
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse" id="navbarRightAlignExample">
+                <!-- Left links -->
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">ABOUT</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">HISTORY</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">WORKS</a>
                     </li>
                 </ul>
-
-                
-                <ul class="navbar-nav">
-                    <!-- Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-mdb-toggle="dropdown" aria-expanded="false">
-                            Post
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li>
-                                <a class="dropdown-item" href="{% url 'myapp:post_create' %}">新規投稿</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="{% url 'myapp:post_list' %}">投稿一覧</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                
-                <ul class="navbar-nav">
-                    <!-- Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-mdb-toggle="dropdown" aria-expanded="false">
-                            Category
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            {% for item in category_list %}
-                            <li>
-                                <a class="dropdown-item" href="{% url 'myapp:category_detail' item.name_en %}">{{ item.name }}</a>
-                            </li>
-                            {% endfor %}
-                            <hr>
-                            
-                            <li>
-                                <a class="dropdown-item" href="{% url 'myapp:category_list' %}">カテゴリ一覧</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-
-
-                <form action="{% url 'myapp:search' %}" class="d-flex input-group w-auto" method="POST">
-                    {% csrf_token %}
-                    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-                        aria-describedby="search-addon" name="freeword" />
-                </form>
+                <!-- Left links -->
             </div>
-        </nav>
+            <!-- Collapsible wrapper -->
+        </div>
+        <!-- Container wrapper -->
+    </nav>
 
-        <main class='container'>
-
-            {% if messages %}
-            <br>
-            {% for message in messages %}
-
-            <div class="alert alert-{{ message.tags }}" role="alert">
-                {{ message }}
-            </div>
-
-            {% endfor %}
-            {% endif %}
+    <main style="flex: 1;">
+        <div class="context">
+            <h1>Pure Css Animated Background</h1>
+        </div>
 
 
-            {% block content %}
-            {% endblock %}
-        </main>
+        <div class="area">
+            <ul class="circles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        
 
-        <!-- Footer -->
-        <footer class="text-center text-lg-start bg-light text-muted">
-            <!-- Section: Social media -->
-            <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-                <!-- Left -->
-                <div class="me-5 d-none d-lg-block">
-                    <span>Get connected with us on social networks:</span>
-                </div>
-                <!-- Left -->
+    </main>
 
-                <!-- Right -->
-                <div>
-                    <a href="" class="me-4 text-reset">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="" class="me-4 text-reset">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="" class="me-4 text-reset">
-                        <i class="fab fa-google"></i>
-                    </a>
-                    <a href="" class="me-4 text-reset">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="" class="me-4 text-reset">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="" class="me-4 text-reset">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </div>
-                <!-- Right -->
-            </section>
-            <!-- Section: Social media -->
 
-            <!-- Section: Links  -->
-            <section class="">
-                <div class="container text-center text-md-start mt-5">
-                    <!-- Grid row -->
-                    <div class="row mt-3">
-                        <!-- Grid column -->
-                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                            <!-- Content -->
-                            <h6 class="text-uppercase fw-bold mb-4">
-                                <i class="fas fa-gem me-3"></i>Company name
-                            </h6>
-                            <p>
-                                Here you can use rows and columns to organize your footer content. Lorem ipsum
-                                dolor sit amet, consectetur adipisicing elit.
-                            </p>
-                        </div>
-                        <!-- Grid column -->
+    <section class="">
+        <footer class="text-center text-white" style="background-color: #38B6FF;">
+            <!-- Grid container -->
+            <div class="container p-4 pb-0">
+                <!-- Section: CTA -->
+                <section class="">
+                    <div class="d-flex justify-content-center align-items-center">
 
-                        <!-- Grid column -->
-                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                            <!-- Links -->
-                            <h6 class="text-uppercase fw-bold mb-4">
-                                Products
-                            </h6>
-                            <p>
-                                <a href="#!" class="text-reset">Angular</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">React</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">Vue</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">Laravel</a>
-                            </p>
-                        </div>
-                        <!-- Grid column -->
-
-                        <!-- Grid column -->
-                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                            <!-- Links -->
-                            <h6 class="text-uppercase fw-bold mb-4">
-                                Useful links
-                            </h6>
-                            <p>
-                                <a href="#!" class="text-reset">Pricing</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">Settings</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">Orders</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">Help</a>
-                            </p>
-                        </div>
-                        <!-- Grid column -->
-
-                        <!-- Grid column -->
-                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                            <!-- Links -->
-                            <h6 class="text-uppercase fw-bold mb-4">
-                                Contact
-                            </h6>
-                            <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
-                            <p>
-                                <i class="fas fa-envelope me-3"></i>
-                                info@example.com
-                            </p>
-                            <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-                            <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
-                        </div>
-                        <!-- Grid column -->
+                        <p>
+                            <a href="#">
+                                <button type="button" class="btn btn-outline-light btn-rounded">
+                                    <i class="far fa-envelope" style="font-size: 16px;"></i>
+                                    <span style="font-size: 16px;">お問い合わせ</span>
+                                </button>
+                            </a>
+                        </p>
                     </div>
-                    <!-- Grid row -->
-                </div>
-            </section>
-            <!-- Section: Links  -->
+                </section>
+                <!-- Section: CTA -->
+            </div>
+            <!-- Grid container -->
 
             <!-- Copyright -->
-            <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-                © 2021 Copyright:
-                <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
             </div>
             <!-- Copyright -->
         </footer>
         <!-- Footer -->
+    </section>
 
-    </header>
-    <!-- End your project here-->
 
     <!-- MDB -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
     <!-- Custom scripts -->
     <script type="text/javascript"></script>
+
+    <script>
+        $(window).scroll(function () {
+            var now = $(window).scrollTop();
+            if (now > 200) {
+                $('.pagetop').fadeIn("slow");
+            } else {
+                $('.pagetop').fadeOut('slow');
+            }
+        });
+    </script>
+
 </body>
 
 </html>
