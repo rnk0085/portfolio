@@ -53,7 +53,7 @@
     color: #FFF;
   }
 
-/* 見出し部分 */
+/* 見出し・タイトル */
 h2 {
   position: relative;
   padding: 1.1rem;
@@ -68,9 +68,99 @@ h2:before {
   height: 5px;
   content: '';
   border-radius: 3px;
-  background: red;
+  background: #FF773E;
 }
+
+/* 小見出し */
+h3 {
+    position: relative;
+    padding: 1rem .5rem;
+  }
   
+  h3:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    content: '';
+    background: #FF773E;
+  }
+
+/* テーブル */
+table{
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table tr{
+    border-bottom: solid 2px white;
+  }
+  
+  table tr:last-child{
+    border-bottom: none;
+  }
+  
+  table th{
+    position: relative;
+    text-align: left;
+    width: 30%;
+    background-color: #90EE90;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  
+table th:after{
+    display: block;
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top:calc(50% - 10px);
+    right:-10px;
+    border-left: 10px solid #90EE90;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+  
+  table td{
+    text-align: left;
+    width: 70%;
+    text-align: center;
+    background-color: #eee;
+    padding: 10px 20px;
+  }
+
+/* リスト */
+ul.cp_list {
+	padding:0.5em;
+	list-style-type:none;
+}
+ul.cp_list li {
+	position:relative;
+	padding: 0em 0.3em 0.3em 1.3em;
+}
+ul.cp_list li:after,ul.cp_list li:before {
+	position:absolute;
+	content:'';
+	display:block;
+	background: #FFC107;
+	top: 0.43em;
+	left: 0.5em;
+	height: 11px;
+	width: 4px;
+	border-radius: 10px;
+	transform: rotate(45deg);
+}
+ul.cp_list li:before {
+	top: 0.6em;
+	left: 0.2em;
+	height:8px;
+	transform:rotate(-45deg);
+}
+
 /* たけのこアニメーション */
 @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
 
