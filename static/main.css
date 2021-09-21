@@ -14,6 +14,11 @@
     margin-left: 20px;
 }
 
+.card img {
+    height: 50%;
+    width: auto;
+}
+
 /* ページトップへ */
 .pagetop{
     display: none;
@@ -57,6 +62,36 @@
     border-color: #43FF6B;
     color: #FFF;
   }
+
+/* リンク */
+.cp_link {
+	position: relative;
+	padding: 0.1em 0.3em;
+	display: inline-block;
+	transition: .3s;
+	color: #009943;
+}
+.cp_link::before,
+.cp_link::after {
+	position: absolute;
+	content: '';
+	width: 0;
+	height: 1px;
+	background-color: #009943;
+	transition: .3s;
+}
+.cp_link::before {
+	top: 0;
+	left: 0;
+}
+.cp_link::after {
+	bottom: 0;
+	right: 0;
+}
+.cp_link:hover::before,
+.cp_link:hover::after {
+	width: 100%;
+}
 
 /* 見出し・タイトル */
 h2 {
