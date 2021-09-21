@@ -9,6 +9,16 @@
     height: 200px;
 }
 
+.subtitle {
+    font-size: 0.6em;
+    margin-left: 20px;
+}
+
+.card img {
+    height: 50%;
+    width: auto;
+}
+
 /* ページトップへ */
 .pagetop{
     display: none;
@@ -53,6 +63,36 @@
     color: #FFF;
   }
 
+/* リンク */
+.cp_link {
+	position: relative;
+	padding: 0.1em 0.3em;
+	display: inline-block;
+	transition: .3s;
+	color: #009943;
+}
+.cp_link::before,
+.cp_link::after {
+	position: absolute;
+	content: '';
+	width: 0;
+	height: 1px;
+	background-color: #009943;
+	transition: .3s;
+}
+.cp_link::before {
+	top: 0;
+	left: 0;
+}
+.cp_link::after {
+	bottom: 0;
+	right: 0;
+}
+.cp_link:hover::before,
+.cp_link:hover::after {
+	width: 100%;
+}
+
 /* 見出し・タイトル */
 h2 {
   position: relative;
@@ -85,6 +125,55 @@ h3 {
     height: 3px;
     content: '';
     background: #FF773E;
+  }
+
+/* カードデザイン */
+/* カード本体 */
+.cards {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  /* 擬似要素とpadding-topでカードの高さを指定 */
+  .cards::before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
+  
+  /* カード内の画像 */
+  .cards img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10%;
+  }
+  
+  /* カード裏面・表面の共通スタイル */
+  .cards .back,
+  .cards .front {
+    transition: all 0.6s;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+    backface-visibility: hidden;
+  }
+  
+  /* カード表面のスタイル */
+  .cards .front {
+    transform: rotateY(-180deg);
+  }
+  
+  /* ホバー時のカード裏面 */
+  .cards:hover .back {
+    transform: rotateY(180deg);
+  }
+  
+  /* ホバー時のカード表面 */
+  .cards:hover .front {
+    transform: rotateY(0);
   }
 
 /* テーブル */
@@ -159,6 +248,79 @@ ul.cp_list li:before {
 	left: 0.2em;
 	height:8px;
 	transform:rotate(-45deg);
+}
+
+/* アコーディオンメニュー */
+.cp_qa *, .cp_qa *:after, .cp_qa *:before {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+.cp_qa {
+	border-top: 1px solid #1b2538;
+}
+.cp_qa .cp_actab {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	margin-bottom: 1px;
+	color: #1b2538;
+}
+.cp_qa .cp_actab input {
+	position: absolute;
+	opacity: 0;
+}
+
+.cp_qa .cp_actab label {
+	font-weight: bold;
+	line-height: 1.6;
+	position: relative;
+	display: block;
+	margin: 0 0 0 0;
+	padding: 1em 2em 1em 1em;
+	cursor: pointer;
+	border-bottom: 1px solid #1b2538;
+}
+.cp_qa .cp_actab label:hover {
+	color: #009943;
+}
+
+.cp_qa .cp_actab .cp_actab-content {
+	overflow: hidden;
+	max-height: 0;
+	-webkit-transition: max-height 0.5s ease;
+	        transition: max-height 0.5s ease;
+	background: #E6FFE9;
+}
+.cp_qa .cp_actab .cp_actab-content p {
+	margin: 1em;
+}
+
+.cp_qa .cp_actab input:checked ~ label {
+	color: #00838F;
+}
+
+.cp_qa .cp_actab input:checked ~ .cp_actab-content {
+	max-height: 40em;
+}
+
+.cp_qa .cp_actab label::after {
+	line-height: 1.6;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	display: block;
+	width: 3em;
+	margin-top: -12.5px;
+	-webkit-transition: all 0.5s ease;
+	        transition: all 0.5s ease;
+	text-align: center;
+}
+.cp_qa .cp_actab input[type=checkbox] + label::after {
+	content: '\025bc';
+}
+.cp_qa .cp_actab input[type=checkbox]:checked + label::after {
+	-webkit-transform: rotateX(180deg);
+	transform: rotateX(180deg);
 }
 
 /* 経歴デザイン */
