@@ -37,9 +37,9 @@
     display: inline-block;
     max-width: 180px;
     text-align: center;
-    border: 2px solid #43FF6B;
+    border: 2px solid #009943;
     font-size: 16px;
-    color: #43FF6B;
+    color: #009943;
     text-decoration: none;
     font-weight: bold;
     padding: 8px 16px;
@@ -159,6 +159,150 @@ ul.cp_list li:before {
 	left: 0.2em;
 	height:8px;
 	transform:rotate(-45deg);
+}
+
+/* 経歴デザイン */
+.cp_timeline02 {
+	position: relative;
+	margin: 3em auto;
+	overflow: auto;
+    width: 85%;
+}
+.cp_timeline02:before {
+	position: absolute;
+	left: 50%;
+	width: 5px;
+	height: 100%;
+	content: '';
+	background: #EF6C00;
+}
+.cp_timeline02 h4 {
+	position: relative;
+	clear: both;
+	max-width: 6em;
+	margin: 0 auto 1em;
+	padding: .1em;
+	text-align: center;
+	background: #FFC107;
+	border-radius: 8px;
+	font-size: 1.5em;
+    font-weight: bold;
+}
+.cp_timeline02 ul {
+	max-width: calc(100% - 2em);
+	margin: 0;
+	padding: 0 0 0 2em;
+	list-style: none;
+}
+.cp_timeline02 li {
+	position: relative;
+	margin-bottom: 1em;
+	padding: 1em;
+	background: #E6FFE9;
+	width: 42%;
+	border-radius: 8px;
+	border: solid 1px #90EE90;
+}
+.cp_timeline02 li:before {
+	position: absolute;
+	top: 12px;
+	left: -14px;
+	content: '';
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 10px 15px 10px 0;
+	border-color: transparent #E6FFE9 transparent transparent;
+	z-index: 0;
+}
+.cp_timeline02 li:after {
+	position: absolute;
+	top: 12px;
+	left: -16px;
+	content: '';
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 10px 15px 10px 0;
+	border-color: transparent #90EE90 transparent transparent;
+ 	z-index: -1;
+}
+.cp_timeline02 li:nth-child(even) {
+	float: right;
+	margin-top: 2em;
+}
+.cp_timeline02 li:nth-child(odd) {
+	float: left;
+}
+.cp_timeline02 li:nth-child(odd):before {
+	right: -14px;
+	left: auto;
+	border-width: 10px 0 10px 15px;
+	border-color: transparent transparent transparent #E6FFE9;
+}
+.cp_timeline02 li:nth-child(odd):after {
+	position: absolute;
+	right: -16px;
+	left: auto;
+	content: '';
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 10px 0 10px 15px;
+	border-color: transparent transparent transparent #90EE90;
+ 	z-index: -1;
+}
+.cp_timeline02 li:nth-of-type(2n+1) {
+	clear: both;
+}
+.cp_timeline02 li .flag {
+	padding: 0;
+	margin: 0;
+	font-weight: bold;
+    border-bottom: solid 3px #009943;
+	font-size: 1.2em;
+}
+.cp_timeline02 li .desc {
+	font-size: 1em;
+	line-height: 1.5em;
+    margin-top: 10px;
+}
+.cp_timeline02 li .time {
+	font-size: 0.8em;
+	color: #009943;
+	font-weight: bold;
+    display:inline;
+}
+@media only screen and (max-width: 767px) {
+	.cp_timeline02:before {
+		left: 0;
+	}
+	.cp_timeline02 ul {
+		z-index: 1;
+		padding: 0 0 0 1.5em;
+	}
+	.cp_timeline02 li {
+		width: 100%;
+	}
+	.cp_timeline02 li:nth-child(even),
+	.cp_timeline02 li:nth-child(odd) {
+		float: none;
+	}
+	.cp_timeline02 li:nth-child(odd):before {
+		right: auto;
+		left: -14px;
+		border-width: 10px 15px 10px 0;
+		border-color: transparent #E6FFE9 transparent transparent;
+	}
+	.cp_timeline02 li:nth-child(odd)::after {
+		right: auto;
+		left: -16px;
+		border-width: 10px 15px 10px 0;
+		border-color: transparent #90EE90 transparent transparent;
+	}
 }
 
 /* たけのこアニメーション */
