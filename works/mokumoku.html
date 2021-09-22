@@ -24,6 +24,18 @@
 
     <link rel="shortcut icon" href="#">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.slider').bxSlider({
+                auto: true,
+                pause: 5000,
+            });
+        });
+    </script>
+
 </head>
 
 <body style="margin: 0;
@@ -74,12 +86,56 @@
 
     <main style="flex: 1;">
 
-        <div class="container">
 
-            <div class="works">
+        <div class="slider">
+            <img src="../image/works/MokuMoku/mokumoku_login.png" width=100% height=auto alt="">
+            <img src="../image/works/MokuMoku/mokumoku_studyroom.png" width=100% height=auto alt="">
+            <img src="../image/works/MokuMoku/mokumoku_timer.png" width=100% height=auto alt="">
+            <img src="../image/works/MokuMoku/mokumoku_home.png" width=100% height=auto alt="">
+        </div>
+
+        <div class="container">
+            <div class="works" style="margin: auto; width: 80%;">
                 <h2>MokuMoku</h2>
+                <table style="margin-top: 20px;">
+                    <tr>
+                        <th>概要</th>
+                        <td>世界中の人とMokuMoku勉強する</td>
+                    </tr>
+                    <tr>
+                        <th>URL</th>
+                        <td>
+                            開発中です
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>使用技術</th>
+                        <td>Dart・Flutter・Firebase</td>
+                    </tr>
+                    <tr>
+                        <th>開発期間</th>
+                        <td>開発中です(8月10日からスタートしました)</td>
+                    </tr>
+                    <tr>
+                        <th>きっかけ</th>
+                        <td style="text-align: left; padding-left: 30px;">
+                            私は以前より教育関係のアプリを制作したいと考えていました。
+                            そんな中、同じ想いを持った友人がいたので一緒に開発をすることに決めました。
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>工夫した点</th>
+                        <td style="text-align: left; padding-left: 30px;">
+                            準備中です
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
+
+        <br>
+        <br>
+        <br>
 
     </main>
 
