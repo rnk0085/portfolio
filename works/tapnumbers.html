@@ -24,6 +24,18 @@
 
     <link rel="shortcut icon" href="#">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.slider').bxSlider({
+                auto: true,
+                pause: 5000,
+            });
+        });
+    </script>
+
 </head>
 
 <body style="margin: 0;
@@ -74,12 +86,25 @@
 
     <main style="flex: 1;">
 
-        <div class="container">
 
-            <div class="works">
+        <div class="slider">
+            <img src="../image/works/TapNumbers/tap_numbers.png" width=100% height=auto alt="">
+            <img src="../image/works/TapNumbers/tap_numbers.png" width=100% height=auto alt="">
+            <img src="../image/works/TapNumbers/tap_numbers.png" width=100% height=auto alt="">
+            <img src="../image/works/TapNumbers/tap_numbers.png" width=100% height=auto alt="">
+            <img src="../image/works/TapNumbers/tap_numbers.png" width=100% height=auto alt="">
+        </div>
+
+        <div class="container">
+            <div class="works" style="margin: auto; width: 80%;">
                 <h2>すうじけし</h2>
+                <p>ただいま準備中です</p>
             </div>
         </div>
+
+        <br>
+        <br>
+        <br>
 
     </main>
 
