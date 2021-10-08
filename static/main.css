@@ -232,7 +232,7 @@ ul.cp_list li:before {
 	border-bottom: 1px solid #1b2538;
 }
 .cp_qa .cp_actab label:hover {
-	color: #009943;
+	color: #FF773E;
 }
 
 .cp_qa .cp_actab .cp_actab-content {
@@ -247,7 +247,7 @@ ul.cp_list li:before {
 }
 
 .cp_qa .cp_actab input:checked ~ label {
-	color: #00838F;
+	color: #009943;
 }
 
 .cp_qa .cp_actab input:checked ~ .cp_actab-content {
@@ -641,12 +641,14 @@ body{
   color: #000;
 }
 
-label {
+.star-label {
   display: block;
   margin: 0 0 4px 0;
   padding : 15px;
   line-height: 1;
+  width: 150px;
   color :#fff;
+  text-align: center;
   font-weight: bold;
   background : #009943;
   cursor :pointer;
