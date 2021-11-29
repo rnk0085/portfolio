@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
-    <title>BookMarkメモについて</title>
+    <title>AI自動採点について</title>
     <link rel="stylesheet" href="../static/main.css">
 
     <link rel="icon" href="../static/favicon.ico" id="favicon">
@@ -89,68 +89,54 @@
 
         <div class="slider">
             <!-- 1：2 -->
-            <img src="../image/works/BookMarkMemo/bookmarkmemo_home.png" width=100% height=auto alt="">
-            <img src="../image/works/BookMarkMemo/bookmarkmemo_post.png" width=100% height=auto alt="">
-            <img src="../image/works/BookMarkMemo/bookmarkmemo_tagdetail.png" width=100% height=auto alt="">
-            <img src="../image/works/BookMarkMemo/bookmarkmemo_login.png" width=100% height=auto alt="">
-            <img src="../image/works/BookMarkMemo/bookmarkmemo_signup.png" width=100% height=auto alt="">
+            <img src="" width=100% height=auto alt="">
         </div>
 
         <div class="container">
             <div class="works" style="margin: auto; width: 80%;">
-                <h2>BookMarkメモ</h2>
-                <p style="text-align: center; color: grey; margin: 20px auto;">※もし画像が表示されない場合は再読み込みしてください</p>
+                <h2>AI自動採点
+                </h2>
+                
+                <p style="text-align: center; color: grey; margin: 20px auto;">※画像は準備中です</p>
+                <!-- <p style="text-align: center; color: grey; margin: 20px auto;">※もし画像が表示されない場合は再読み込みしてください</p> -->
                 <table>
                     <tr>
                         <th>概要</th>
-                        <td>ブックマークを自由自在に管理する</td>
+                        <td>簡単な選択問題をAIが自動採点してくれるサイト</td>
                     </tr>
                     <tr>
                         <th>URL</th>
                         <td>
-                            <a href="https://bookmark-bm.herokuapp.com/" target="_blank" role="button">
-                                BookMarkメモ
+                            デプロイはしていません。
+                            <a href="https://docs.google.com/presentation/d/1vr25FiOq6S4k0Sb4qihmBqJhJ5XUTMNSJGJf43uYWkE/edit?usp=sharing" target="_blank" role="button">
+                                ※発表資料
                             </a>
                         </td>
                     </tr>
                     <tr>
-                        <th>テストアカウント</th>
-                        <td>
-                            ユーザー名：テスト<br>
-                            パスワード：1234test
-                        </td>
-                    </tr>
-                    <tr>
                         <th>使用技術</th>
-                        <td>Python・Django・SQLite・HTML・CSS・BootStrap</td>
+                        <td>Python・Google Colab・Flask・HTML・CSS・BootStrap</td>
                     </tr>
                     <tr>
                         <th>開発期間</th>
-                        <td>3週間（+改善期間）
+                        <td>
+                            約1ヶ月<br>
+                            ※テックベースインターン（トレーニングプログラム）の期間
                         </td>
                     </tr>
                     <tr>
                         <th>きっかけ</th>
                         <td style="text-align: left; padding-left: 30px;">
-                            私は技術について勉強する際に様々なことを調べていました。
-                            そこで為になったサイトのURLをWordで管理していましたが、
-                            後で見返したときに見づらく、分かりにくくなっていました。
-                            この状況を改善させるために開発を始めました。
+                            自分が塾講師をしていた時に「テスト採点するのが面倒だった」ことや
+                            データ入力の仕事をしている様子を見ていて、「簡単な問題は人間が採点しなくてもいいのではないか」と思っていたからです。
                         </td>
                     </tr>
                     <tr>
                         <th>工夫した点</th>
                         <td style="text-align: left; padding-left: 30px;">
-                            主に3つのことを意識しながら作成しました。
-                            <br>
-                            1つ目は「パッと見で分かる」ことで、自分でタイトルやタグを付けたり、色分けしたりすることで
-                            視覚的に分かりやすくなるようにしました。
-                            <br>
-                            2つ目は「自由度が高い」ことで、1つのURLに対してメモを付けれるようにしました。
-                            そのため、メモに関連するURLをまとめることが出来ます。
-                            <br>
-                            3つ目は「探しやすい」ことで、タグ一覧を見たり、検索機能を使用することで
-                            目的のURLを探しやすくしました。
+                            機能を絞って開発を進めました。
+                            具体的にはア～ウの選択問題だけを対象とし、ラベルはア・イ・ウ・空欄の4つのみとしました。
+                            また、精度を1.0にするために細かくパラメータを調整しました。
                         </td>
                     </tr>
                 </table>
